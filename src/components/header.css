@@ -1,0 +1,60 @@
+.header {
+    padding: 20px;
+    display: flex;
+    background-color:#8fbbaf;
+    justify-content: space-between;
+}
+.logo {
+    height: 100px;
+    border-radius: 35px;
+    border: 10px solid #acdeaa;
+    background-color: white;
+    padding: 6px;
+}
+.left-box {
+    display: flex;
+    width: 70%;
+}
+.right-box {
+    display: flex;
+    width: 20%;
+    justify-content: flex-end;
+}
+.shop-name-box {
+    text-align: center;
+    padding: 10px;
+    padding-top: 15px;
+    color: white;
+}
+.brand {
+    font-style: italic;
+}
+.srch-box {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    width: 50%;
+}
+.srch-bar {
+    height: 30px;
+    border-radius: 10px;
+    width: 100%;
+}
+.srch-bar:focus {
+    outline: none;
+}
+.user-access-box {
+    display: flex;
+    align-items: center;
+}
+.cart-box {
+    display: flex;
+    align-items: center;
+}
+.circle {
+    border: 1px solid white;
+    border-radius: 15px;
+}
+div {
+    border: 1px solid black;
+}
