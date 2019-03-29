@@ -1,6 +1,13 @@
 .header {
-    display: flex;
+    background-color: #8fbbaf;
+    padding: 30px;
 }
 .col {
     width: 33%;
+}
+.max-width {
+    max-width: 1100px;
+    display: flex;
+    margin: auto;
+    border: 1px solid black;
 }

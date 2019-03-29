@@ -1,0 +1,26 @@
+.shop-logo {
+    display: flex;
+    flex-wrap: wrap;
+}
+.logo-img {
+    height: 90px;
+    border-radius: 30px;
+    border: 10px solid #acdeaa;
+    border: 10px solid #d6f8b8;
+}
+.shop-name {
+    max-width: 120px;
+    padding-top: 8px;
+    text-align: center;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.shop-slogan {
+    color:  #bdf7bb;
+    font-family: cursive;
+    margin-top: 5px;
+}
+.dream-home {
+    color: white;
+    font-size: 15pt;
+}

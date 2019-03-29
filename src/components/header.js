@@ -8,15 +8,17 @@ import Cart from './cart';
 export default (props) =>{
   return (
     <nav className='header'>
-      <div className='col'>
-        <Logo />
-      </div>
-      <div className='col'>
-        <Search />
-      </div>
-      <div className='col'>
-        <User />
-        <Cart />
+      <div className='max-width'>
+        <div className='col'>
+          <Logo />
+        </div>
+        <div className='col'>
+          <Search />
+        </div>
+        <div className='col'>
+          <User />
+          <Cart />
+        </div>
       </div>
     </nav>
   );
