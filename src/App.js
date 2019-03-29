@@ -17,7 +17,6 @@ class App extends Component {
         </AuthContext.Provider>
       </HashRouter>
         
-
     );
   }
 }
