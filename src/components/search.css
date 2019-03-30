@@ -1,0 +1,21 @@
+.srch-box {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.full-width {
+    width: 100%;
+}
+.srch-bar {
+    width: 100%;
+    border-radius: 15px;
+    padding-left: 20px;
+    font-size: 18pt;
+    color: gray;
+}
+.srch-bar:focus {
+    outline: none;
+}
+.srch-bar::placeholder {
+    color: lightgray;
+}

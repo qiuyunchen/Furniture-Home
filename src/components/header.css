@@ -6,8 +6,7 @@
     width: 33%;
 }
 .max-width {
-    max-width: 1100px;
+    max-width: 1050px;
     display: flex;
     margin: auto;
-    border: 1px solid black;
 }
