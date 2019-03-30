@@ -1,0 +1,8 @@
+.user-box {
+    display: flex;
+    align-items: center;
+    color: #556c8a;
+    font-size: 20pt;
+    font-weight: 600;
+    padding: 20px;
+}

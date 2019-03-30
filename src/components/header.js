@@ -15,7 +15,7 @@ export default (props) =>{
         <div className='col'>
           <Search />
         </div>
-        <div className='col'>
+        <div className='col flex-right'>
           <User />
           <Cart />
         </div>

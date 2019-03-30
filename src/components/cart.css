@@ -1,0 +1,8 @@
+.cart-box {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+.cart-img {
+    height: 50px;
+}

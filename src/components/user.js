@@ -1,7 +1,10 @@
 import React from 'react';
+import './user.css';
 
 export default (props) =>{
     return (
-        <h12>user</h12>
+        <div className='user-box'>
+            user
+        </div>
     );
 }

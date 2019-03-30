@@ -1,5 +1,6 @@
 .srch-box {
     height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
 }
@@ -12,6 +13,7 @@
     padding-left: 20px;
     font-size: 18pt;
     color: gray;
+    letter-spacing: 2px;
 }
 .srch-bar:focus {
     outline: none;
