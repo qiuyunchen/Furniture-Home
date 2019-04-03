@@ -14,7 +14,3 @@
     display: flex;
     justify-content: flex-end;
 }
-.dropdown-area {
-    max-width: 1000px;
-    margin: auto;
-}

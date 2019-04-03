@@ -1,0 +1,33 @@
+.dropdown-categ {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    justify-content: space-between;
+    z-index: 99;
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 20px;
+    background-color: #8fbbaf;
+}
+.rm {
+    color: #556c8a;
+}
+.list-group {
+    margin: 20px;
+    /* text-align: center; */
+}
+.categ-list {
+    list-style: none;
+    padding: 0px;
+}
+.list-item {
+    color: white;
+}
+.list-item:hover {
+    cursor: pointer;
+    font-weight: 700;
+    color: #8fbbaf;
+    color: #556c8a;
+}

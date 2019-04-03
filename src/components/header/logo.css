@@ -26,6 +26,9 @@
     color: white;
     font-size: 15pt;
 }
+.dream-home:hover {
+    color: black;
+}
 /* .dream-home:hover .header {
     background-color: white; 
 } */

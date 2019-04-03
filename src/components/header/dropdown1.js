@@ -1,12 +1,12 @@
 import React from 'react';
-import './dropdown.css';
+import './dropdown1.css';
 
 export default (props) =>{
     return <>
-    <div className='dropdown-categ'>
+   <div className='dropdown-categ'>
 
             <div className='list-group'>
-            <h5>Bathroom</h5>
+            <h5 className='rm'>Bathroom</h5>
             <ul className='categ-list'>
                 {
                 ['Sink', 'Storage', 'Toilet']
@@ -17,7 +17,7 @@ export default (props) =>{
 
 
             <div className='list-group'>
-            <h5>Bedroom</h5>
+            <h5 className='rm'>Bedroom</h5>
             <ul className='categ-list'>
                 {
                 ['Beds', 'Bench', 'Dressers', 'Nightstands', 'Storage']
@@ -27,7 +27,7 @@ export default (props) =>{
             </div>
 
             <div className='list-group'>
-            <h5>Kitchen & Dining Room</h5>
+            <h5 className='rm'>Kitchen & Dining Room</h5>
             <ul className='categ-list'>
                 {
                 ['China Cabinets', 'Dining Chairs', 'Dining Sets', 'Dining Tables', 'Kitchen Islands']
@@ -37,7 +37,7 @@ export default (props) =>{
             </div>
             
             <div className='list-group'>
-            <h5>Living Area</h5>
+            <h5 className='rm'>Living Area</h5>
             <ul className='categ-list'>
                 {
                 ['Bookshelves', 'File Cabinets', 'Sofas & Chairs', 'Tables & Desks', 'TV Stands']

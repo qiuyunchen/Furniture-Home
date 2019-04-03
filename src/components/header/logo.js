@@ -1,7 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import logoImg from '../assets/home_logo.png';
+import logoImg from '../../assets/home_logo.png';
 import './logo.css';
+import { DropdownContext } from '../../contexts/contexts';
 
 export default (props) =>{
   const dropdownCateg = () =>{
@@ -27,7 +28,11 @@ export default (props) =>{
 
         <div className='shop-slogan'>
           Where your 
-          <strong className='dream-home' onMouseOver={dropdownCateg}> dream home </strong> 
+          <DropdownContext.Consumer>
+            {handleDropdown =>{
+              return <strong className='dream-home' onMouseOver={handleDropdown}> dream home </strong>
+            }}
+          </DropdownContext.Consumer>
           awaits 💕
         </div>
       </div>

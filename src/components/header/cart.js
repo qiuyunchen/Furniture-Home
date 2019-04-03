@@ -1,5 +1,5 @@
 import React from 'react';
-import cartImg from '../assets/cart.png';
+import cartImg from '../../assets/cart.png';
 import './cart.css';
 
 export default (props) =>{
