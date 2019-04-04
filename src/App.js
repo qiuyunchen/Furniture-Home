@@ -10,7 +10,7 @@ import './App.css';
 
 class App extends Component {
   state = {
-    user: null,
+    user: {name: 'Qiuyun'},
     search: '',
     dropdown: 0,
   }

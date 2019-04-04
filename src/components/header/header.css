@@ -9,6 +9,7 @@
     max-width: 1000px;
     display: flex;
     margin: auto;
+    flex-wrap: wrap;
 }
 .flex-right {
     display: flex;

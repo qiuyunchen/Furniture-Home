@@ -6,3 +6,10 @@
     font-weight: 600;
     padding: 20px;
 }
+.wb-greet {
+    font-size: 12pt;
+}
+.header-username {
+    font-size: 15pt;
+    text-align: center;
+}
