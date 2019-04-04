@@ -17,7 +17,7 @@ export default (props) =>{
     <>
       <div className='shop-logo'>
         <div>
-          <Link to='/home'>
+          <Link to='/'>
             <img className='logo-img' title='Go to home page' src={logoImg} alt='shop-logo'></img>
           </Link>
         </div>

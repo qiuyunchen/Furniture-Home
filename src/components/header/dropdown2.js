@@ -1,6 +1,7 @@
 import React from 'react';
 import './dropdown2.css';
 import { AuthContext } from '../../contexts/contexts';
+import {Link} from 'react-router-dom';
 
 export default (props) =>{
     const loggedIn = <>
@@ -11,9 +12,13 @@ export default (props) =>{
     </>
 
     const notLoggedIn = <>
-        <li className='user-list-item'>Login</li>
+        <Link  className='link' to='/login'>
+            <li className='user-list-item'>Login</li>
+        </Link>
         <li className='user-list-item new-text'>New?</li>
-        <button type='button' className='signup-btn'>Create Account</button>
+        <Link to='/signup'>
+            <button type='button' className='signup-btn'>Create Account</button>
+        </Link>
     </>
 
     return <div className='dropdown-user-box'>

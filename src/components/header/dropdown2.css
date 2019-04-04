@@ -39,3 +39,6 @@
     margin: 15px 0px;
     color: #556c8a;
 }
+.link:hover {
+    text-decoration: none;
+}

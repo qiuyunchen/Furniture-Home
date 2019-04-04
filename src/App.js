@@ -6,11 +6,12 @@ import {AuthContext, SearchContext, DropdownContext, DropdownwhatContext, Mouseo
 import Header from './components/header/header';
 import Home from './containers/home';
 import SearchResult from './containers/searchresult';
+import Signup from './containers/signup';
 import './App.css';
 
 class App extends Component {
   state = {
-    user: {name: 'Qiuyun'},
+    user: null,
     search: '',
     dropdown: 0,
   }
@@ -52,7 +53,12 @@ class App extends Component {
         </DropdownwhatContext.Provider>
         </MouseoutContext.Provider>
 
-        <Route path='/home' exact component={Home} />
+        <Route path='/' exact component={Home} />
+
+        <Route path='/signup' exact component={ Signup } />
+        {/* <Route path='/login' exact component={ Login } />
+        <Route path='/logout' exact component={ Logout } /> */}
+
         <Route path='/search/:srch' exact component={SearchResult} />
       </HashRouter>
         
