@@ -58,6 +58,7 @@ class App extends Component {
   render() {
     return (
       <HashRouter>
+
         <MouseoutContext.Provider value={this.handleMouseOut}>
         <DropdownwhatContext.Provider value={this.state.dropdown}>
         <DropdownContext.Provider value={this.handleDropdown}>
@@ -75,8 +76,19 @@ class App extends Component {
         <Route path='/signup' exact component={ Signup } />
         <Route path='/login' exact component={ Login } />
         <Route path='/logout' exact component={ Logout } />
-
         <Route path='/search/:srch' exact component={SearchResult} />
+        <Route path='/search/product/:productid' exact component={ProductInfo} />
+        <Route path='/search/shop/:shopid' exact component={ShopInfo} />
+        <Route path='/cart' exact component={ Cart } />
+        <Route path='/checkout' exact component={ Checkout } />
+
+        {/* Protected Routes */}
+        <Route path='/:username/profile' exact component={ Profile } />
+        <Route path='/:username/orders' exact component={ Orders } />
+        <Route path='/:username/store' exact component={ Store } />
+        <Route path='/:username/cart' exact component={ UserCart } />
+        <Route path='/:username/checkout' exact component={ UserCheckout } />
+
       </HashRouter>
         
     );
