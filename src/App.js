@@ -7,6 +7,7 @@ import Header from './components/header/header';
 import Home from './containers/home';
 import SearchResult from './containers/searchresult';
 import Signup from './containers/signup';
+import Login from './containers/signin';
 import './App.css';
 
 class App extends Component {
@@ -54,8 +55,8 @@ class App extends Component {
         <Route path='/' exact component={Home} />
 
         <Route path='/signup' exact component={ Signup } />
-        {/* <Route path='/login' exact component={ Login } />
-        <Route path='/logout' exact component={ Logout } /> */}
+        <Route path='/login' exact component={ Login } />
+        {/* <Route path='/logout' exact component={ Logout } /> */}
 
         <Route path='/search/:srch' exact component={SearchResult} />
       </HashRouter>

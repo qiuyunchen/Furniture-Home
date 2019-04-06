@@ -1,0 +1,17 @@
+.signin-box {
+    margin: 20px;
+}
+.signin-err-alert{
+    max-width: 500px;
+    margin: auto;
+}
+.signin-form {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 500px;
+    margin: auto;
+    background-color: #d6f8b8;
+    border: 3px solid #99c770;
+    justify-content: center;
+    padding: 40px 35px;
+}
