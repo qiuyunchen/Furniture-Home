@@ -21,7 +21,6 @@ class App extends Component {
   }
 
   handleDropdown = e =>{
-    console.log(e.target.classList);
     if (e.target.classList[0] === 'srch-box'){
       this.setState({dropdown: 0});
     }
@@ -34,7 +33,6 @@ class App extends Component {
   }
 
   handleMouseOut = e =>{
-    console.log(e.target);
     this.setState({dropdown: 0});
   }
 

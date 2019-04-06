@@ -1,6 +1,10 @@
 .signup-box {
     margin: 20px;
 }
+.signup-err-alert{
+    max-width: 500px;
+    margin: auto;
+}
 .signup-form {
     display: flex;
     flex-wrap: wrap;
