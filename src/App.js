@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { HashRouter, Route, Link } from 'react-router-dom';
-//import firebase from './firebase';
+import firebase from './firebase';
 
 import {AuthContext, SearchContext, DropdownContext, DropdownwhatContext, MouseoutContext} from './contexts/contexts';
 import Header from './components/header/header';
 import Home from './containers/home';
 import SearchResult from './containers/searchresult';
 import Signup from './containers/signup';
-import Login from './containers/signin';
+import Login from './containers/login';
+import Logout from './containers/logout';
 import './App.css';
 
 class App extends Component {
@@ -37,6 +38,23 @@ class App extends Component {
     this.setState({dropdown: 0});
   }
 
+  componentDidMount() {
+    this.unsubscribe = firebase.auth().onAuthStateChanged( user =>{
+      if (user) {
+        console.log('The user in app.js is...', user);
+        const userObj = {name: 'dummy'};
+        // update user object with name at least
+        this.setState({user: userObj});
+      } else {
+        this.setState({user: null});
+      }
+    })
+  }
+
+  componentWillUnmount () {
+    this.unsubscribe();
+  }
+
   render() {
     return (
       <HashRouter>
@@ -56,7 +74,7 @@ class App extends Component {
 
         <Route path='/signup' exact component={ Signup } />
         <Route path='/login' exact component={ Login } />
-        {/* <Route path='/logout' exact component={ Logout } /> */}
+        <Route path='/logout' exact component={ Logout } />
 
         <Route path='/search/:srch' exact component={SearchResult} />
       </HashRouter>

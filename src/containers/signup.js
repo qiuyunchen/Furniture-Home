@@ -28,11 +28,11 @@ export default class Signup extends React.Component {
         } else {
             firebase.auth().createUserWithEmailAndPassword(email, password)
             .then(res =>{
-                const {username, password, name} = this.state;
+                const {username, password, name, email} = this.state;
                 res.username = username;
                 res.password = password;
                 res.name = name;
-                // {username, password, name, email, uid: res.uid},
+                res.email = email;
                 this.setState({
                     username: '',
                     password: '',
@@ -54,11 +54,10 @@ export default class Signup extends React.Component {
     componentDidMount(){
         this.unsubscribe = firebase.auth().onAuthStateChanged( user =>{
             if (user){
-                // console.log(this.state.userInfo.username);
-                // console.log(this.props);
-                // this.props.history.push(`/profile/${this.state.userInfo.username}`);
+                this.props.history.push(`/profile/${this.state.userInfo.username}`);
             } else {
-                console.log('user not logged in');
+                // do nothing
+                console.log('Failed to sign up user. User not logged in.');
             }
         })
     }

@@ -1,12 +1,13 @@
 import React from 'react';
 import firebase from '../firebase';
-import './signin.css';
+import './login.css';
 
-export default class SignIn extends React.Component {
+export default class Login extends React.Component {
     state = {
         email: '',
         password: '',
         error: '',
+        userInfo: {},
     }
     handleChange = (e) =>{
         this.setState({[e.target.name]: e.target.value});
@@ -17,10 +18,12 @@ export default class SignIn extends React.Component {
         const {email, password} = this.state;
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then(res =>{
+                console.log('login response: ', res);
                 this.setState({email: '', password: '', error: ''});
+                this.props.history.push(`/profile/${this.state.userInfo.username}`);
             })
             .catch(e =>{
-                this.setState({error: e.message});
+                this.setState({error: e.message+'.'});
             })
     }
 
