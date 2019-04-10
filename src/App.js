@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { HashRouter, Route, Link } from 'react-router-dom';
 import firebase from './firebase';
 
-import {AuthContext, SearchContext, DropdownContext, DropdownwhatContext, MouseoutContext} from './contexts/contexts';
+import {AuthContext, DropdownContext, DropdownwhatContext, MouseoutContext} from './contexts/contexts';
 import Header from './components/header/header';
 import Home from './containers/public/home';
 import SearchResult from './containers/public/searchresult';
@@ -18,13 +18,10 @@ import './App.css';
 class App extends Component {
   state = {
     user: null,
-    search: '',
     dropdown: 0,
   }
 
-  handleSearch = (e) =>{
-    this.setState({search: e.target.value})
-  }
+
 
   handleDropdown = e =>{
     if (e.target.classList[0] === 'srch-box'){
@@ -66,11 +63,9 @@ class App extends Component {
         <MouseoutContext.Provider value={this.handleMouseOut}>
         <DropdownwhatContext.Provider value={this.state.dropdown}>
         <DropdownContext.Provider value={this.handleDropdown}>
-        <SearchContext.Provider value={this.handleSearch}>
         <AuthContext.Provider value={this.state.user}>
           <Route path='/' component={Header} />
         </AuthContext.Provider>
-        </SearchContext.Provider>
         </DropdownContext.Provider>
         </DropdownwhatContext.Provider>
         </MouseoutContext.Provider>
