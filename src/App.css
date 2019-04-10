@@ -1,0 +1,6 @@
+.body {
+    display: flex;
+    padding: 30px;
+    max-height: 78vh;
+    overflow: scroll;
+}

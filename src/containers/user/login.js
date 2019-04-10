@@ -20,7 +20,7 @@ export default class Login extends React.Component {
             .then(res =>{
                 console.log('login response: ', res);
                 this.setState({email: '', password: '', error: ''});
-                this.props.history.push(`/profile/${this.state.userInfo.username}`);
+                this.props.history.push(`/${this.state.userInfo.username}/profile`);
             })
             .catch(e =>{
                 this.setState({error: e.message+'.'});

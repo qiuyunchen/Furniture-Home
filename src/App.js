@@ -4,11 +4,12 @@ import firebase from './firebase';
 
 import {AuthContext, SearchContext, DropdownContext, DropdownwhatContext, MouseoutContext} from './contexts/contexts';
 import Header from './components/header/header';
-import Home from './containers/home';
-import SearchResult from './containers/searchresult';
-import Signup from './containers/signup';
-import Login from './containers/login';
-import Logout from './containers/logout';
+import Home from './containers/public/home';
+import SearchResult from './containers/public/searchresult';
+import Signup from './containers/user/signup';
+import Login from './containers/user/login';
+import Logout from './containers/user/logout';
+import Profile from './containers/private/profile';
 import './App.css';
 
 class App extends Component {
@@ -71,24 +72,26 @@ class App extends Component {
         </DropdownwhatContext.Provider>
         </MouseoutContext.Provider>
 
-        <Route path='/' exact component={Home} />
+        <div className='body'>
+          <Route path='/' exact component={Home} />
 
-        <Route path='/signup' exact component={ Signup } />
-        <Route path='/login' exact component={ Login } />
-        <Route path='/logout' exact component={ Logout } />
-        <Route path='/search/:srch' exact component={SearchResult} />
-        <Route path='/search/product/:productid' exact component={ProductInfo} />
-        <Route path='/search/shop/:shopid' exact component={ShopInfo} />
-        <Route path='/cart' exact component={ Cart } />
-        <Route path='/checkout' exact component={ Checkout } />
+          <Route path='/signup' exact component={ Signup } />
+          <Route path='/login' exact component={ Login } />
+          <Route path='/logout' exact component={ Logout } />
 
-        {/* Protected Routes */}
-        <Route path='/:username/profile' exact component={ Profile } />
-        <Route path='/:username/orders' exact component={ Orders } />
-        <Route path='/:username/store' exact component={ Store } />
-        <Route path='/:username/cart' exact component={ UserCart } />
-        <Route path='/:username/checkout' exact component={ UserCheckout } />
+          {/* <Route path='/search/:srch' exact component={SearchResult} />
+          <Route path='/search/product/:productid' exact component={ProductPage} />
+          <Route path='/search/shop/:shopid' exact component={ShopPage} />
+          <Route path='/cart' exact component={ Cart } />
+          <Route path='/checkout' exact component={ Checkout } /> */}
 
+          {/* Protected Routes */}
+          <Route path='/:username/profile' exact component={ Profile } />
+          {/* <Route path='/:username/orders' exact component={ Orders } />
+          <Route path='/:username/store' exact component={ Store } />
+          <Route path='/:username/cart' exact component={ UserCart } />
+          <Route path='/:username/checkout' exact component={ UserCheckout } /> */}
+        </div>
       </HashRouter>
         
     );

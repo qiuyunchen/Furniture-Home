@@ -5,14 +5,28 @@ import {Link} from 'react-router-dom';
 import firebase from '../../firebase';
 
 export default (props) =>{
-    const loggedIn = <>
-        {['Profile', 'Orders', 'Store'].map( (e,i) =>{
-            return <li className='user-list-item' key={i}>{e}</li>
-        })}
-        <Link className='link' to='/logout'>
-            <button type='button' className='logout-btn'>Log Out</button>
-        </Link>
-    </>
+    const loggedIn = <AuthContext.Consumer>
+        {user =>{
+            return <>
+                <Link className='link user-list-item' to={`/${user.name}/profile`}>
+                    <li>Profile</li>
+                </Link>
+
+                <Link className='link user-list-item' to={`/${user.name}/orders`}>
+                    <li>Orders</li>
+                </Link>
+
+                <Link className='link user-list-item' to={`/${user.name}/store`}>
+                    <li>Store</li>
+                </Link>
+
+                <Link className='link' to='/logout'>
+                    <button type='button' className='logout-btn'>Log Out</button>
+                </Link>
+            </>
+        }}
+    </AuthContext.Consumer>
+
 
     const notLoggedIn = <>
         <Link  className='link' to='/login'>

@@ -54,7 +54,7 @@ export default class Signup extends React.Component {
     componentDidMount(){
         this.unsubscribe = firebase.auth().onAuthStateChanged( user =>{
             if (user){
-                this.props.history.push(`/profile/${this.state.userInfo.username}`);
+                this.props.history.push(`/${this.state.userInfo.username}/profile`);
             } else {
                 // do nothing
                 console.log('Failed to sign up user. User not logged in.');
