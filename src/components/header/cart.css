@@ -6,3 +6,6 @@
 .cart-img {
     height: 50px;
 }
+.cart-img:hover {
+    cursor: pointer;
+}
