@@ -1,49 +1,44 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom';
 import {DropdownContext} from '../../contexts/contexts';
 import './search.css';
 
 export default class Search extends React.Component {
     state = {
         searchTerm: '',
-        redirect: '',
     }
 
-    handleSearch = e =>{
+    handleChange = e =>{
         this.setState({
             searchTerm: e.target.value,
-            redirect: false,
         })
     }
 
     handleEnter = e =>{
         if (e.key === 'Enter'){
-            this.setState({redirect: true});
+            const {searchTerm} = this.state
+            this.setState({searchTerm: ''}, () => {
+                this.props.history.push('/search/' + searchTerm);
+            });
         }
     }
 
     render(){
-        const {searchTerm, redirect} = this.state;
-
-        if (redirect){
-            return <Redirect to={'/search/' + searchTerm}></Redirect>
-        } else {
-            return (
-                <DropdownContext.Consumer>
-                    {handleDropdown =>{
-                        return <div className='srch-box' onMouseOver={handleDropdown}>
-                            <div className='full-width'>
-                                <input className='srch-bar' 
-                                    onChange={this.handleSearch}
-                                    onKeyDown={this.handleEnter}
-                                    type='text' 
-                                    placeholder='Search...'>
-                                </input>
-                            </div>
+        return (
+            <DropdownContext.Consumer>
+                {handleDropdown =>{
+                    return <div className='srch-box' onMouseOver={handleDropdown}>
+                        <div className='full-width'>
+                            <input className='srch-bar' 
+                                onChange={this.handleChange}
+                                onKeyDown={this.handleEnter}
+                                type='text' 
+                                value={this.state.searchTerm}
+                                placeholder='Search...'>
+                            </input>
                         </div>
-                    }}
-                </DropdownContext.Consumer>
-            );
-        }
+                    </div>
+                }}
+            </DropdownContext.Consumer>
+        );
     }
 }
