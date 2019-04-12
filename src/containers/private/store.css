@@ -22,14 +22,9 @@
 .upload-store-logo-text:hover {
     font-weight: 800;
 }
+.save-store-btn {
+    margin: 0px 15px;
+}
 input[type="file"] {
     display: none;
-}
-.add-prod-form {
-    margin-top: 15px;
-    display: flex;
-    width: 100%;
-    border: 3px solid #556c8a;
-    background-color: white;
-    padding: 20px;
 }

@@ -1,0 +1,28 @@
+.add-prod-form {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    border: 3px solid #99c770;
+    background-color: white;
+    padding: 20px;
+}
+.space {
+    padding: 5px;
+    margin: 10px;
+}
+.upload-prod-img-box {
+    width: 100%;
+    text-align: center;
+    margin: 10px;
+}
+.upload-prod-img-text:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+.add-new-prod-btn {
+    background-color: #d6f8b8;
+    color: green;
+    text-align: center;
+}

@@ -33,6 +33,7 @@ export default class Store extends React.Component {
         }
     }
     handleAddProduct = e =>{
+        e.preventDefault();
         const {addProd} = this.state;
         this.setState({addProd: !addProd});
     }
@@ -40,20 +41,16 @@ export default class Store extends React.Component {
     render (){
         const {shopName, shopSummary, errorMsg, store, addProd} = this.state;
         const displayError = errorMsg ? <div className='alert alert-danger' role='alert'>{errorMsg}</div> : '';
-        const addProductBtn = store ? <button onClick={this.handleAddProduct}>Add Product</button> : '';
-        const addProductForm = addProd ? 
-            <form className='add-prod-form'>
-                <AddProduct />
-            </form> 
-            : '';
+        const addProductBtn = store ? <button type='submit' onClick={this.handleAddProduct}>Add Products</button> : '';
+        const addProductForm = addProd ? <AddProduct /> : '';
 
         return <div className='store-box'>
             <h1 className='text-center'>Welcome!</h1>
             <h4 className='text-center'>This is where you will set up your store.</h4>
             {displayError}
             <form className='store-form'>
-                <input type='text' className='input row' onChange={this.handleChange} name='shopName' value={shopName} placeHolder='Shop Name'></input>
-                <input type='text' className='input row' onChange={this.handleChange} name='shopSummary' value={shopSummary} placeHolder='An About Shop Summary'></input>
+                <input type='text' className='input row' onChange={this.handleChange} name='shopName' value={shopName} placeholder='Shop Name'></input>
+                <input type='text' className='input row' onChange={this.handleChange} name='shopSummary' value={shopSummary} placeholder='An About Shop Summary'></input>
 
                 <div className='upload-store-logo-box'>
                     <label className='upload-store-logo-text'>
