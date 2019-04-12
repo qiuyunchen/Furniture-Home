@@ -17,7 +17,7 @@ export default (props) =>{
         </div>
 
         <div className='col srch-div'>
-          <Search history={props.history}/>
+          <Search/>
         </div>
 
         <div className='col flex-right'>

@@ -1,0 +1,35 @@
+.store-box {
+    max-width: 600px;
+    margin: auto;
+}
+.store-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #d6f8b8;
+    border: 3px solid #99c770;
+    padding: 30px;
+}
+.upload-store-logo-box {
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+}
+.upload-store-logo-text {
+    font-weight: 600;
+    cursor: pointer;
+}
+.upload-store-logo-text:hover {
+    font-weight: 800;
+}
+input[type="file"] {
+    display: none;
+}
+.add-prod-form {
+    margin-top: 15px;
+    display: flex;
+    width: 100%;
+    border: 3px solid #556c8a;
+    background-color: white;
+    padding: 20px;
+}

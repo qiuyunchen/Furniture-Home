@@ -1,8 +1,9 @@
 import React from 'react';
 import {DropdownContext} from '../../contexts/contexts';
+import {withRouter} from 'react-router-dom';
 import './search.css';
 
-export default class Search extends React.Component {
+export default withRouter(class Search extends React.Component {
     state = {
         searchTerm: '',
     }
@@ -28,11 +29,11 @@ export default class Search extends React.Component {
                 {handleDropdown =>{
                     return <div className='srch-box' onMouseOver={handleDropdown}>
                         <div className='full-width'>
-                            <input className='srch-bar' 
+                            <input className='srch-bar'  
                                 onChange={this.handleChange}
                                 onKeyDown={this.handleEnter}
-                                type='text' 
                                 value={this.state.searchTerm}
+                                type='text'
                                 placeholder='Search...'>
                             </input>
                         </div>
@@ -41,4 +42,4 @@ export default class Search extends React.Component {
             </DropdownContext.Consumer>
         );
     }
-}
+})
