@@ -28,3 +28,9 @@
 input[type="file"] {
     display: none;
 }
+.shop-logo-img {
+    margin-top: 20px;
+    height: 100px;
+    border: 3px solid #8fbbaf;
+    border-radius: 50px;
+}

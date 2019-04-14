@@ -1,6 +1,7 @@
 import React from 'react';
 import './addproduct.css';
 
+
 export default class AddProduct extends React.Component {
     state = {
         name: '',
@@ -23,9 +24,41 @@ export default class AddProduct extends React.Component {
         if (!name || !price || !desc || !category || images.length === 0 || category === 'Product Category'){
             this.setState({error: 'Please fill out all information to add product to store.'})
         } else {
+            // post product info to backend database
             this.setState({error: ''})
         }
     }
+
+    handleImageUpload = e =>{
+        console.log(e.target.files)
+    }
+
+    /////////////////////
+    // handleFileInput = async (e) => {
+    //     const firstFile = e.target.files[0];
+    
+    //     const root = firebase.storage().ref()
+    //     const newImage = root.child(firstFile.name);
+    
+    //     // newImage.put(firstFile)
+    //     //   .then((snapshot) => {
+    //     //     return snapshot.ref.getDownloadURL()
+    //     //   })
+    //     //   .then((url) => {
+    //     //     console.log(url)
+    //     //     this.saveImage(url);
+    //     //   })
+    
+    //     try {
+    //       const snapshot = await newImage.put(firstFile);
+    //       const url = await snapshot.ref.getDownloadURL();
+    //       this.saveImage(url);
+    //     }
+    //     catch(err) {
+    //       console.log(err);
+    //     }
+        
+    //   }
 
     render (){
         const {name, price, desc, category, error} = this.state;
@@ -48,8 +81,8 @@ export default class AddProduct extends React.Component {
             </select>
 
             <div className='upload-prod-img-box'>
-                <label className='upload-prod-img-text'>
-                    👉🏻 Upload product images here
+                <label className='upload-prod-img-text' onClick={this.handleImageUpload}>
+                    ⬆️ Upload product images here ⬆️
                     <input type='file'></input>
                 </label>
             </div>
